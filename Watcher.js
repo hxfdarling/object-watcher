@@ -68,6 +68,7 @@ module.exports = class Watcher {
     //触发更新需要比较新值和旧值
     //因为有可能是父对象被赋值导致的更新，并非被监听属性值发生变化导致
     if (value !== oldVal) {
+      this.value = value;
       this.callback(value, oldVal)
     }
   }
